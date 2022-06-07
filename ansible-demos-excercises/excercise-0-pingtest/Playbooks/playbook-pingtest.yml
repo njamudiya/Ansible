@@ -1,5 +1,7 @@
 - 
   name: Check Connectivity to Target Servers
+  hosts: all
+  vars:   
   tasks: 
    - name: Ping test
      ping: 
