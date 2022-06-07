@@ -9,13 +9,14 @@ pipeline {
           ansiColor('xterm')
          }
 
-stages {
-    steps {
-        sh '''#!/bin/bash
-        ansible-inventory --list -i "${Workspace}/ansible-demos-excercises/excercise-0-pingtest/Inventory/inventory.yml"
-        ansible-playbook "${Workspace}/ansible-demos-excercises/excercise-0-pingtest/Playbooks/playbook-pingtest.yml" -i "${Workspace}/ansible-demos-excercises/excercise-0-pingtest/Inventory/inventory.yml" -c local
-        '''
-    }
-
-  } 
+ stages {
+    stage ('PingTest'){
+        steps {
+             sh '''#!/bin/bash
+             ansible-inventory --list -i "${Workspace}/ansible-demos-excercises/excercise-0-pingtest/Inventory/inventory.yml"
+             ansible-playbook "${Workspace}/ansible-demos-excercises/excercise-0-pingtest/Playbooks/playbook-pingtest.yml" -i "${Workspace}/ansible-demos-excercises/excercise-0-pingtest/Inventory/inventory.yml" -c local
+             '''
+            }
+    } 
+ }  
 }
