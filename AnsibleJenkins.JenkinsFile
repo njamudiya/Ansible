@@ -1,15 +1,15 @@
 pipeline {
     agent {
         node{
-            label 'AnsibleTarget1'
+            label 'AnsibleTarget2'
         }
     }   
  stages {
     stage ('PingTest'){
         steps {
              sh '''#!/bin/bash
-             echo ${Workspace}/inventory.yml
-             ansible-inventory --list -i "${Workspace}/Ansible/ansible-demos-excercises/Inventory/inventor.yml"
+             
+             ansible-inventory --list -i "${Workspace}/Ansible/ansible-demos-excercises/Inventory/inventory.yml"
              ansible-playbook "${Workspace}/Ansible/ansible-demos-excercises/playbooks/playbook-pingtest.yml" -i "${Workspace}/Ansible/ansible-demos-excercises/Inventory/inventory.yml" -c local
              '''
             }
