@@ -1,7 +1,7 @@
 pipeline {
     agent {
         node{
-            label 'Ansiblecontroller'
+            label 'AnsibleController'
         }
     }   
  stages {
