@@ -10,7 +10,7 @@ pipeline {
              sh '''#!/bin/bash
              echo ${Workspace}/inventory.yml
              ansible-inventory --list -i "${Workspace}/Ansible/ansible-demos-excercises/excercise-0-pingtest/Inventory/inventory.yml"
-             #ansible-playbook "${Workspace}/Ansible/ansible-demos-excercises/excercise-0-pingtest/Inventory/playbook-pingtest.yml" -i "${Workspace}/Ansible/ansible-demos-excercises/excercise-0-pingtest/Inventory/inventory.yml" -c local
+             ansible-playbook "${Workspace}/Ansible/ansible-demos-excercises/excercise-0-pingtest/Inventory/playbook-pingtest.yml" -i "${Workspace}/Ansible/ansible-demos-excercises/excercise-0-pingtest/Inventory/inventory.yml" -c local
              '''
             }
     } 
