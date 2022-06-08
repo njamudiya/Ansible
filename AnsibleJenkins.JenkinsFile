@@ -9,8 +9,8 @@ pipeline {
         steps {
              sh '''#!/bin/bash
              
-             ansible-inventory --list -i "${Workspace}/Ansible/ansible-demos-excercises/inventory.yml"
-             ansible-playbook "${Workspace}/Ansible/ansible-demos-excercises/playbook-pingtest.yml" -i "${Workspace}/Ansible/ansible-demos-excercises/inventory.yml" -c local
+             ansible-inventory --list -i "${Workspace}/ansible-demos-excercises/inventory.yml"
+             ansible-playbook "${Workspace}/ansible-demos-excercises/playbook-pingtest.yml" -i "${Workspace}/Ansible/ansible-demos-excercises/inventory.yml" -c local
              '''
             }
     } 
