@@ -8,9 +8,9 @@ pipeline {
     stage ('PingTest'){
         steps {
              sh '''#!/bin/bash
-             echo $Workspace is workspace
-             ansible-inventory --list -i "${Workspace}/ansible-demos-excercises/inventory.yml"
-             ansible-playbook "${Workspace}/ansible-demos-excercises/playbook-pingtest.yml" -i "${Workspace}/Ansible/ansible-demos-excercises/inventory.yml" -c local
+             echo ${WORKSPACE} is workspace           
+             ansible-inventory --list -i "${WORKSPACE}/ansible-demos-excercises/inventory.yml"
+             ansible-playbook "${WORKSPACE}/ansible-demos-excercises/playbook-pingtest.yml" -i "${WORKSPACE}/Ansible/ansible-demos-excercises/inventory.yml" -c local
              '''
             }
     } 
