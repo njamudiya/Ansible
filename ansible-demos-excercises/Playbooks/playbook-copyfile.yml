@@ -5,4 +5,4 @@
     - name: Copy File
       copy: 
        src: /tmp/test-file.txt
-       dest: /tmp/test-file.txt
+       dest: /tmp/
