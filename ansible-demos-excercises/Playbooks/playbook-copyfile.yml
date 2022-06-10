@@ -6,6 +6,9 @@
       copy: 
        src: /tmp/test-file.txt
        dest: /tmp/Copy_file.txt
+       owner: root
+       group: root
+       mode: 0644
       register: copy_res
 
     - name: 
