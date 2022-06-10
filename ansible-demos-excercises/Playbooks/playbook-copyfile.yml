@@ -6,3 +6,8 @@
       copy: 
        src: /tmp/test-file.txt
        dest: /tmp/
+      register: copy
+
+    - name: 
+      debug : 
+       msg : "{copy}"
