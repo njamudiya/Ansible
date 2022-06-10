@@ -5,7 +5,7 @@
     - name: Copy File
       copy: 
        src: /tmp/test-file.txt
-       dest: /tmp/
+       dest: /tmp/Copy_file.txt
       register: copy_res
 
     - name: 
