@@ -6,8 +6,9 @@
       copy: 
        src: /tmp/test-file.txt
        dest: /tmp/
-      register: copy
+      register: copy_res
 
     - name: 
       debug : 
-       msg : "{copy}"
+       msg : "{{copy_res}}"
+      when: copy_res is defined
