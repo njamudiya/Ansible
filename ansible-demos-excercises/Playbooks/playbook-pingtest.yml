@@ -8,6 +8,6 @@
      register: ping_res
 
    - name: 
-      debug : 
+     debug : 
        msg : "{{ping_res}}"
-      when: ping_res is defined  
+     when: ping_res is defined  
