@@ -5,3 +5,9 @@
   tasks: 
    - name: Ping test
      ping: 
+     register: ping_res
+
+   - name: 
+      debug : 
+       msg : "{{ping_res}}"
+      when: ping_res is defined  
