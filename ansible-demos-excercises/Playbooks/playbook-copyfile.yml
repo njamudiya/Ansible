@@ -2,7 +2,7 @@
   name: Copyf File to Target servers
   hosts: all
   tasks: 
-    -name: Copy File
-     copy: 
-      src: /tmp/test-file.txt
-      dest: /tmp/test-file.txt
+    - name: Copy File
+      copy: 
+       src: /tmp/test-file.txt
+       dest: /tmp/test-file.txt
