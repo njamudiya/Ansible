@@ -12,6 +12,7 @@
          uid: 1012
        - name: kiran
          uid: 1013
+         
     - name: Copy File
       copy: 
        src: /tmp/test-file.txt
