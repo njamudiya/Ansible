@@ -2,7 +2,10 @@
   name: Copyf File to Target servers
   hosts: all
   tasks: 
-    - user: name = '{{ item.name}}' state=present uid='{{item.uid}}'
+    - user: 
+       name : '{{ item.name}}' 
+       state: present 
+       uid: '{{item.uid}}'
       loop: 
        - name : joe
          uid: 1010
