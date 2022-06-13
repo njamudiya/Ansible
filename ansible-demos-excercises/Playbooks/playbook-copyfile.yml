@@ -15,7 +15,8 @@
        msg : "{{copy_res}}"
       when: copy_res is defined
     
-    - user: name = '{{ item.name}}' state=present uid='{{item.uid}}'
+    - name: 'Create Users'
+      user: name = '{{ item.name}}' state=present uid='{{item.uid}}'
       loop: 
        - name : joe
          uid: 1010
