@@ -14,3 +14,11 @@
       debug : 
        msg : "{{copy_res}}"
       when: copy_res is defined
+    
+    - user: name = '{{ item}}' state=present
+      loop: 
+       - joe
+       - george
+       - ravi
+       - kiran
+
