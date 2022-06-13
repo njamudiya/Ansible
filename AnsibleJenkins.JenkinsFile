@@ -9,7 +9,7 @@ pipeline {
         steps {
              sh '''#!/bin/bash
              echo ${WORKSPACE} is workspace
-             echo whomi         
+             whoami         
              ansible-inventory --list -i "${WORKSPACE}/ansible-demos-excercises/Inventory/inventory.yml"
              ansible-playbook "${WORKSPACE}/ansible-demos-excercises/Playbooks/playbook-pingtest.yml" -i "${WORKSPACE}/ansible-demos-excercises/Inventory/inventory.yml" -c local
              ansible-playbook "${WORKSPACE}/ansible-demos-excercises/Playbooks/playbook-copyfile.yml" -i "${WORKSPACE}/ansible-demos-excercises/Inventory/inventory.yml" -c local
