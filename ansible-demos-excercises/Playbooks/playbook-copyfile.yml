@@ -2,9 +2,7 @@
   name: Copyf File to Target servers
   hosts: all
   tasks: 
-    - user: 
-       name : '{{ item.name}}' 
-       state: present    
+    - user: name='{{ item.name}}'  state=present    
       loop: 
        -  joe
        -  george
