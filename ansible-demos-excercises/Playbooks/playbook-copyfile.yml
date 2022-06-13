@@ -15,10 +15,14 @@
        msg : "{{copy_res}}"
       when: copy_res is defined
     
-    - user: name = '{{ item}}' state=present
+    - user: name = '{{ item.name}}' state=present uid='{{item.uid}}'
       loop: 
-       - joe
-       - george
-       - ravi
-       - kiran
+       - name : joe
+         uid: 1010
+       - name: george
+         uid: 1011
+       - name: ravi
+         uid: 1012
+       - name: kiran
+         uid: 1013
 
