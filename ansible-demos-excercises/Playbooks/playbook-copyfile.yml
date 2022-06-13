@@ -4,17 +4,13 @@
   tasks: 
     - user: 
        name : '{{ item.name}}' 
-       state: present 
-       uid: '{{item.uid}}'
+       state: present    
       loop: 
-       - name : joe
-         uid: 1010
-       - name: george
-         uid: 1011
-       - name: ravi
-         uid: 1012
-       - name: kiran
-         uid: 1013
+       -  joe
+       -  george
+       - ravi
+       -  kiran
+                  
       become: yes
 
     - name: Copy File
