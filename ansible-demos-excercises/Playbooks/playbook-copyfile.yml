@@ -14,7 +14,7 @@
        - name: ravi
          uid: 9013
        - name: kiran
-         uid: 9013
+         uid: 9014
       become: yes
 
     - name: Copy File
