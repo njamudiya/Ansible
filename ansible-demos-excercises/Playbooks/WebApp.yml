@@ -7,17 +7,6 @@
       - name: try ping target
         ping: 
       
-      - name: yum-clean-metadata
-        ansible.builtin.command: yum clean metadata
-        args:
-          warn: no
-
-      - name: Remove Epel repository
-        yum_repository:
-          name: epel
-          state: absent
-              
-
       - name: Add Epel repository
         yum_repository:
           name: epel
@@ -52,6 +41,11 @@
           name: mysql
           state: started 
           enabled: yes
+        register: resultdb
+
+      - name: show resultdb
+        debug: 
+          msg= "{{resultdb }}"
 
       - name: Created App DB 
         mysql_db: name=employee_db state=present
