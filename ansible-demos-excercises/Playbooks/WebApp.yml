@@ -11,7 +11,7 @@
         ansible.builtin.yum_repository:
           name: epel-release
           #description: EPEL YUM repo
-          #baseurl: https://download.fedoraproject.org/pub/epel/$releasever/$basearch/
+          baseurl: http://download.fedoraproject.org/pub/epel
       
       - name: Install all required dependencies
         yum:
