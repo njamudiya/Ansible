@@ -1,6 +1,6 @@
   - name: Deploy a web application 
     hosts: db_and_webserver1,db_and_webserver2
-    become: true
+    become: True
     vars:
       ansible_python_interpreter: /usr/bin/python3
     tasks: 
@@ -8,10 +8,12 @@
         ping: 
       
       - name: Add repository
-        ansible.builtin.yum:
-          name: epel-release
-          
-          register: results
+        yum_repository:
+          name: epel
+          description: EPEL YUM repo
+          baseurl: https://download.fedoraproject.org/pub/epel/$releasever/$basearch/
+        register: results
+        
       - name: Show results
         debug: 
           msg= {{ results }}
