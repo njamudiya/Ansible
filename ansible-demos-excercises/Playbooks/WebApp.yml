@@ -15,9 +15,6 @@
           #mirrorlist: https://mirror.umd.edu/fedora/epel/8/Everything/x86_64/repodata/repomd.xml
         register: results
         
-      - name: Show results
-        debug: 
-          msg= {{ results }}
       
       - name: Install all required dependencies
         dnf:
