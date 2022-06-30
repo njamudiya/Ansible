@@ -7,14 +7,23 @@
       - name: try ping target
         ping: 
       
-   
+      - name: Add repository
+        ansible.builtin.yum_repository:
+          name: epel-release
+          description: EPEL YUM repo
+          baseurl: http://download.fedoraproject.org/pub/epel
+          register: results
+      - name: Show results
+        debug: 
+          msg= {{ results }}
       
       - name: Install all required dependencies
-        yum:
+        dnf:
           name: "{{ packages }}"
           state: present
         vars:
           packages:
+            - yum-utils
             - python38
             - python38-devel
             - python38-pip
