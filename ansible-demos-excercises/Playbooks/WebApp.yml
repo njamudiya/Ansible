@@ -12,6 +12,7 @@
           name: epel
           description: EPEL YUM repo
           baseurl: https://download.fedoraproject.org/pub/epel/$releasever/$basearch/
+          #mirrorlist: https://mirror.umd.edu/fedora/epel/8/Everything/x86_64/repodata/repomd.xml
         register: results
         
       - name: Show results
