@@ -18,7 +18,7 @@
       
       - name: Install all required dependencies
         ignore_errors: yes
-        dnf:
+        yum:
           name: "{{ packages }}"
           state: present
         vars:
