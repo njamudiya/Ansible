@@ -54,11 +54,11 @@
 
       - name: Install Python Flask 
         pip: 
-           name: {{ item }}
+           name: "{{ item }} "
            state: present
         with_items: 
-           - "{{ flask }}"
-           - "(( flask-mysql }}"
+           - flask 
+           - flask-mysql 
       
       - name: Copy Source code
         copy: src=app.py dest=/opt/app.py
