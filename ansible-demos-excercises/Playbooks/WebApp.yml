@@ -7,10 +7,11 @@
       - name: try ping target
         ping: 
       
-      - name: Clean Epel repository
+      - name: Add Epel repository
         yum_repository:
           name: epel
-          state: absent
+          description: EPEL YUM repo
+          baseurl: https://download.fedoraproject.org/pub/epel/$releasever/$basearch/
         register: results
         
       - name: Show results
