@@ -7,12 +7,7 @@
       - name: try ping target
         ping: 
       
-      - name: Add repository
-        ansible.builtin.yum_repository:
-          name: epel-release
-          description: EPEL YUM repo
-          baseurl: http://download.fedoraproject.org/pub/epel
-      
+           
       - name: Install all required dependencies
         dnf:
           name: "{{ packages }}"
