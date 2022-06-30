@@ -11,7 +11,7 @@
         yum_repository:
           name: epel
           description: EPEL YUM repo
-          baseurl: https://download.fedoraproject.org/pub/epel/$releasever/$basearch/
+          baseurl: https://download.fedoraproject.org/pub/epel/$releasever/Everything/$basearch/
           #mirrorlist: https://mirror.umd.edu/fedora/epel/8/Everything/x86_64/repodata/repomd.xml
         register: results
         
