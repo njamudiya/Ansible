@@ -32,20 +32,23 @@
         yum:
           name: "{{ packages }}"
           state: present
+        register: resultdb
         vars:
           packages:
             - mysql-server
+      
+      - name: show resultdb
+        debug: 
+          msg= "{{resultdb }}"
       
       - name: Start MySQL DB Service
         service:
           name: mysql
           state: started 
           enabled: yes
-        register: resultdb
+       
 
-      - name: show resultdb
-        debug: 
-          msg= "{{resultdb }}"
+
 
       - name: Created App DB 
         mysql_db: name=employee_db state=present
