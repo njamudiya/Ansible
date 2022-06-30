@@ -1,2 +1,2 @@
-db_and_webserver1 ansible_host=192.168.0.21 ansible_ssh_pass=osboxes.org
-db_and_webserver2 ansible_host=192.168.0.22 ansible_ssh_pass=osboxes.org
+db_and_webserver1 ansible_host=192.168.0.21
+db_and_webserver2 ansible_host=192.168.0.22
