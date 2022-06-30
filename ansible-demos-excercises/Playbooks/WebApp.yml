@@ -7,6 +7,11 @@
       - name: try ping target
         ping: 
       
+      - name: yum-clean-metadata
+        ansible.builtin.command: yum clean metadata
+        args:
+          warn: no
+          
       - name: Add Epel repository
         yum_repository:
           name: epel
