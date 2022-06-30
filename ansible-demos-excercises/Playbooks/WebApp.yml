@@ -12,17 +12,24 @@
         args:
           warn: no
 
+      - name: Remove Epel repository
+        yum_repository:
+          name: epel
+          state: absent
+              
+
       - name: Add Epel repository
         yum_repository:
           name: epel
           description: EPEL YUM repo
-          #baseurl: https://download.fedoraproject.org/pub/epel/$releasever/Everything/$basearch/
-          mirrorlist: https://mirror.umd.edu/fedora/epel/8/Everything/x86_64/repodata/repomd.xml
+          baseurl: https://download.fedoraproject.org/pub/epel/7/$basearch/
+          
         register: results
         
       
       - name: Install all required dependencies
         ignore_errors: yes
+        become: true
         yum:
           name: "{{ packages }}"
           state: present
