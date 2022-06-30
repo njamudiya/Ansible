@@ -7,18 +7,14 @@
       - name: try ping target
         ping: 
       
-      - name: Add repository
-        dnf:
-          name: epel-release-y
-    
+   
       
       - name: Install all required dependencies
-        dnf:
+        yum:
           name: "{{ packages }}"
-          state: latest
+          state: present
         vars:
           packages:
-            - yum-utils
             - python38
             - python38-devel
             - python38-pip
