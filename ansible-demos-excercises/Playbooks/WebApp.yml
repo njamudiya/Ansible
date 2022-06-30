@@ -8,10 +8,9 @@
         ping: 
       
       - name: Add repository
-        ansible.builtin.yum_repository:
+        ansible.builtin.yum:
           name: epel-release
-          description: EPEL YUM repo
-          baseurl: http://download.fedoraproject.org/pub/epel
+          
           register: results
       - name: Show results
         debug: 
