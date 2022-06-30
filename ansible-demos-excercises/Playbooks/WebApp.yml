@@ -35,4 +35,46 @@
           state: present
         vars:
           packages:
+            - yum-utils
             - python38
+            - python38-devel
+            - python38-pip
+
+      - name: Install MySQL DB
+        yum:
+          name: "{{ packages }}"
+          state: present
+        vars:
+          packages:
+            - mysql-server
+            - mysql-devel
+      - name: Start MySQL DB Service
+        service:
+          name: mysql
+          state: started 
+          enabled: yes
+
+      - name: Created App DB 
+        mysql_db: name=employee_db state=present
+
+      - name: Create Database User
+        mysql_user: 
+          name: d_user
+          password: VMware@2019
+          priv: '*.*:ALL'
+          state: present
+          host: '%'
+
+      - name: Install Python Flask 
+        pip: 
+           name: "{{ item }} "
+           state: present
+        with_items: 
+           - flask 
+           - flask-mysql 
+      
+      - name: Copy Source code
+        copy: src=app.py dest=/opt/app.py
+      
+      - name: Start Web Server
+        shell: FLASK_APP=/opt/app.py nohup flask run --host=0.0.0.0 &        
