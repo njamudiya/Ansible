@@ -13,4 +13,13 @@
           description: EPEL YUM repo
           baseurl: http://download.fedoraproject.org/pub/epel
       
-      
+      - name: Install all required dependencies
+        dnf:
+          name: "{{ packages }}"
+          state: latest
+        vars:
+          packages:
+            - yum-utils
+            - python38
+            - python38-devel
+            - python38-pip
