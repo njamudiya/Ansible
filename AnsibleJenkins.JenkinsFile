@@ -5,7 +5,7 @@ pipeline {
         }
     }   
  stages {
-    stage ('PingTest'){
+    stage ('Execute'){
         steps {
              sh '''#!/bin/bash
              echo ${WORKSPACE} is workspace
